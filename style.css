@@ -1,0 +1,45 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1e1e1e;
+    color: white;
+    height: 95vh;
+    justify-content: center;
+}
+h1 {
+    margin-bottom: 20px;
+}
+.controls, .mode-switch {
+    margin-top: 10px;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #0078d4;
+    color: white;
+}
+button:hover {
+    background-color: #005fa3;
+}
+.time-inputs {
+    margin-bottom: 15px;
+}
+input[type="number"] {
+    width: 60px;
+    font-size: 18px;
+    text-align: center;
+}
+.hidden {
+    Visibility: Hidden;
+}
+#display {
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}
