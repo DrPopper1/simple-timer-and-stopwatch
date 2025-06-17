@@ -1,11 +1,17 @@
-body {
+* {
     font-family: 'Segoe UI', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #1e1e1e;
     color: white;
-    height: 95vh;
+    height: 100vh;
     justify-content: center;
 }
 h1 {
@@ -17,12 +23,14 @@ h1 {
 button {
     padding: 10px 20px;
     margin: 5px;
-    font-size: 16px;
+    font-size: 50px;
     cursor: pointer;
     border: none;
     border-radius: 8px;
     background-color: #0078d4;
     color: white;
+    width: 420px;
+    height: 150px;
 }
 button:hover {
     background-color: #005fa3;
@@ -31,17 +39,24 @@ button:hover {
     margin-bottom: 15px;
 }
 input[type="number"] {
-    width: 60px;
-    font-size: 18px;
+    width: 200px;
+    height: 70px;
+    font-size: 26px;
     text-align: center;
 }
 .hidden {
     Visibility: Hidden;
 }
 #display {
-    font-size: 60px;
+    font-size: 100px;
     letter-spacing: 2px;
     margin: 20px 0;
+    width: 400px;
+    text-align: center;
+}
+
+#modeLabel {
+    font-size: 80px;
 }
 
 .noscript {
@@ -65,3 +80,51 @@ input[type="number"] {
     font-weight: bolder;
     margin-bottom: 20px;
 }
+
+
+
+@media (max-width: 767px) {
+    button {
+        font-size: 10px;
+        width: 100px;
+        height: 40px;
+    }
+
+    input[type="number"] {
+        width: 50px;
+        height: 20px;
+        font-size: 16px;
+    }
+
+    #display {
+        font-size: 20px;
+        width: 100px;
+    }
+
+    #modeLabel {
+        font-size: 20px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    button {
+        font-size: 30px;
+        width: 320px;
+        height: 100px;
+    }
+
+    input[type="number"] {
+        width: 100px;
+        height: 40px;
+        font-size: 26px;
+    }
+
+    #display {
+        font-size: 50px;
+        width: 300px;
+    }
+
+    #modeLabel {
+        font-size: 60px;
+    }
+}
+/* @media (min-width: 1024px) {} */
