@@ -1,18 +1,20 @@
-let mode = "stopwatch"; // или "timer"
+let mode = "stopwatch";
 let timer = null;
 let time = 0;
 let isRunning = false;
 
 const display = document.getElementById("display");
 const timerInputs = document.getElementById("timerInputs");
+const hrInput = document.getElementById("hrInput");
 const minInput = document.getElementById("minInput");
 const secInput = document.getElementById("secInput");
 const modeLabel = document.getElementById("modeLabel");
 
 function timeUpdate() {
+    const hours = parseInt(hrInput.value) || 0;
     const mins = parseInt(minInput.value) || 0;
     const secs = parseInt(secInput.value) || 0;
-    time = mins * 60 + secs;
+    time = hours * 3600 + mins * 60 + secs;
     updateDisplay();
 }
 
@@ -36,32 +38,31 @@ function start() {
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
-        return
-    }
-
-    if (mode === "timer") {
-        const mins = parseInt(minInput.value) || 0;
-        const secs = parseInt(secInput.value) || 0;
-        time = mins * 60 + secs;
-        if (time <= 0) return;
+        return;
     }
 
     isRunning = true;
-    updateDisplay();
-    timer = setInterval(() => {
-        if (mode === "stopwatch") {
-            time++;
-            updateDisplay();
-        } else {
+
+    if (mode === "timer") {
+        timer = setInterval(() => {
+            console.log(time);
             time--;
             if (time <= 0) {
-            clearInterval(timer);
-            isRunning = false;
-            alert("Время вышло!");
+                clearInterval(timer);
+                isRunning = false;
+                alert("Время вышло!");
             }
             updateDisplay();
-        }
-    }, 1000);
+        }, 1000);
+    }
+
+    if (mode === "stopwatch") {
+        timer = setInterval(() => { 
+            console.log(time);
+            time++;
+            updateDisplay();
+        }, 1000);
+    }
     
 }
 
