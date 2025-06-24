@@ -35,6 +35,7 @@ function switchMode() {
 }
 
 function start() {
+    updateDisplay();
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
@@ -44,21 +45,23 @@ function start() {
     isRunning = true;
 
     if (mode === "timer") {
-        timer = setInterval(() => {
-            console.log(time);
-            time--;
-            if (time <= 0) {
-                clearInterval(timer);
-                isRunning = false;
-                alert("Время вышло!");
-            }
+        if (time == 0) {
             updateDisplay();
-        }, 1000);
+        } else {
+            timer = setInterval(() => {
+                time--;
+                if (time <= 0) {
+                    clearInterval(timer);
+                    isRunning = false;
+                    alert("Время вышло!");
+                }
+                updateDisplay();
+            }, 1000);
+        }
     }
 
     if (mode === "stopwatch") {
         timer = setInterval(() => { 
-            console.log(time);
             time++;
             updateDisplay();
         }, 1000);
@@ -70,7 +73,11 @@ function reset() {
     clearInterval(timer);
     isRunning = false;
     time = 0;
-    updateDisplay();
+    if (mode == "stopwatch") {
+        updateDisplay();
+    } else {
+        timeUpdate();
+    }
     
 }
 

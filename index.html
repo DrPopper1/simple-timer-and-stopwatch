@@ -16,9 +16,9 @@
   <h1 id="modeLabel">Секундомер</h1>
 
   <div class="time-inputs hidden" id="timerInputs" class="hidden">
-    <input onclick="timeUpdate()" type="number" id="hrInput" placeholder="Ч" min="0">
-    <input onclick="timeUpdate()" type="number" id="minInput" placeholder="Мин" min="0">
-    <input onclick="timeUpdate()" type="number" id="secInput" placeholder="Сек" min="0">
+    <input type="number" oninput="timeUpdate()" id="hrInput" placeholder="Ч" min="0">
+    <input type="number" oninput="timeUpdate()" id="minInput" placeholder="Мин" min="0">
+    <input type="number" oninput="timeUpdate()" id="secInput" placeholder="Сек" min="0">
   </div>
 
   <div id="display">00:00:00</div>
