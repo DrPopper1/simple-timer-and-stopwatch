@@ -33,7 +33,7 @@ header {
     margin-bottom: 20px;
     width: 150px;
     height: 150px;
-    background-color: #0078d4;
+    background-color: #d40012;
     border-radius: 50%;
     padding: 10px 20px;
     cursor: pointer;
@@ -42,10 +42,10 @@ header {
 }
 
 .start-button-container:hover {
-    background-color: #005fa3;
+    background-color: #a30031;
 }
 
 .start-button {
-    border: 30px solid transparent; border-left: 50px solid black; 
+    border: 30px solid transparent; border-left: 50px solid rgb(0, 0, 0); 
     margin-left: 40px;
 }
